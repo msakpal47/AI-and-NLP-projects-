@@ -1,0 +1,78 @@
+Object Detection using YOLOv3: User Manual and Guideline
+
+Project Overview
+
+This project utilizes YOLOv3 (You Only Look Once) for object detection in images. It loads images from a specified folder, detects objects using the YOLOv3 model, and saves the output images with bounding boxes around detected objects.
+
+System Requirements
+
+1. Python 3.x
+2. OpenCV 4.x
+3. NumPy
+4. YOLOv3 model files (yolov3.cfg, yolov3.weights, coco.names)
+
+Setup and Configuration
+
+1. Install required libraries: pip install opencv-python numpy
+2. Download YOLOv3 model files from official repository
+3. Update image_folder, output_folder, config_path, weights_path, and classes_path variables in the code to match your file locations
+
+Running the Project
+
+1. Execute the Python script
+2. The script will iterate through all images in the specified image_folder
+3. For each image, it will:
+    - Load the image
+    - Prepare input for YOLOv3 model
+    - Run object detection
+    - Draw bounding boxes around detected objects
+    - Save output image to output_folder
+
+Customization
+
+1. Adjust conf_threshold (confidence threshold) and nms_threshold (non-maximum suppression threshold) values to fine-tune detection accuracy
+2. Update classes_path to use a different class names file
+3. Modify draw_prediction function to customize bounding box appearance
+
+Output
+
+1. Output images with bounding boxes around detected objects will be saved in output_folder
+2. Console output will display processing status and output image paths
+
+Troubleshooting
+
+1. Ensure YOLOv3 model files are correctly downloaded and configured
+2. Verify image folder and output folder paths are correct
+3. Adjust confidence and NMS thresholds to improve detection accuracy
+
+YOLOv3 Model Files
+
+1. yolov3.cfg: YOLOv3 model configuration file
+2. yolov3.weights: YOLOv3 model weights file
+3. coco.names: Class names file for object detection
+
+Code Explanation
+
+The code consists of:
+
+1. Importing necessary libraries
+2. Setting up directory paths and loading YOLOv3 model files
+3. Defining functions for loading output layers and drawing bounding boxes
+4. Iterating through images, detecting objects, and saving output images
+
+Functions
+
+1. get_output_layers(net): Returns output layers of the YOLOv3 model
+2. draw_prediction(img, class_id, confidence, x, y, x_plus_w, y_plus_h): Draws bounding box and label on the image
+
+Variables
+
+1. image_folder: Input image folder path
+2. output_folder: Output image folder path
+3. config_path: YOLOv3 configuration file path
+4. weights_path: YOLOv3 weights file path
+5. classes_path: Class names file path
+6. conf_threshold: Confidence threshold for object detection
+7. nms_threshold: Non-maximum suppression threshold
+
+By following this user manual and guideline, users can successfully run the object detection project using YOLOv3.
